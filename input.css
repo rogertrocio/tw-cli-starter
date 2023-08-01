@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* create a default styles for html tag like headings */
+@layer base {
+  /* using CSS */
+  /* h1 {
+    font-size: 4rem;
+    color: red;
+  }
+  h2 {
+    font-size: 16px;
+  } */
+
+  /* using Tailwind class */
+  h1 {
+    @apply
+      text-3xl
+      text-emerald-700
+      underline
+  }
+  h2 {
+    @apply
+     bg-red-200
+  }
+}
+
+/* Create your own classes for components ex. button */
+@layer components {
+  .btn-blue {
+    @apply
+      bg-blue-500
+      text-white
+      py-2
+      px-4
+      rounded-xl
+      font-bold
+      hover:bg-blue-700
+  }
+}
+
+/* create custom classes outside layer */
+.content-area {
+    @apply bg-green-200;
+
+    /* theme from tailwind config file */
+    height: theme('spacing.128');
+}
+
+/* custom using media */
+@media screen(xl) {
+  body {
+    @apply bg-black text-white
+  }
+}
